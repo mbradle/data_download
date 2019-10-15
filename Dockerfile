@@ -10,8 +10,8 @@ ENV BUILD_DIR=${WN_USER_TARGET}/build
 
 RUN git -C ${WN_USER_TARGET} pull
 
+COPY Makefile /data_download/
+
 WORKDIR /data_download/
 
-COPY Makefile run_make_data.sh /data_download/
-
-CMD ["/bin/sh", "run_make_data.sh"]
+CMD make $VAR
