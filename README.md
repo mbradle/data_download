@@ -1,6 +1,6 @@
 # docker_wn_data
 
-This docker image downloads data appropriate for webnucleo projects.  You first need to have installed [docker](https://runnable.com/docker/getting-started/) and be able to run it, for example, by running the Hello, World image in an appropriate shell.  To do so, type:
+This docker image downloads data appropriate for webnucleo projects.  You first need to have installed [docker](https://runnable.com/docker/getting-started/) and be able to run it. You can verify that docker is properly installed, for example, by running the Hello, World image in an appropriate shell.  To do so, type:
 
 **docker run hello-world**
 
@@ -12,11 +12,11 @@ Once installed, you can run the image.  First, choose the directory you will dow
 
 **pwd**
 
-For example, I am on my Mac Desktop, so I find the result is */Users/bradleymeyer/Desktop*.  I will download the data to a directory *data_pub* off my Desktop (you will use the answer to *pwd* instead of */Users/bradleymeyer/Desktop* in your case).  To do so, I type
+For example, I am on my Mac Desktop, so I find the result is */Users/bradleymeyer/Desktop*.  I will download the data to a directory *data_pub* off my Desktop (you will use the answer to *pwd* instead of */Users/bradleymeyer/Desktop* in your case).  To do so, I type (all on one line)
 
 **docker run -it -v /Users/bradleymeyer/Desktop/data_pub:/data_directory -e VAR=data mbradle/docker_wn_data**
 
-The downloaded data are in the directory *data_pub*.  The variable *VAR* tells the image which data to download.  Current possible values of *VAR* are *data*, *multi_zone_data*, *neutrino_data*, and *weak_data*.  These are used in Webnucleo codes. For example, I can get the neutrino data by typing
+The downloaded data are in the directory *data_pub*.  The variable *VAR* tells the image which data to download.  Current possible values of *VAR* are *data*, *multi_zone_data*, *neutrino_data*, and *weak_data*.  These are used in Webnucleo codes. For example, I can get the neutrino data by typing (on one line)
 
 **docker run -it -v /Users/bradleymeyer/Desktop/data_pub:/data_directory -e VAR="neutrino_data" mbradle/docker_wn_data**
 
