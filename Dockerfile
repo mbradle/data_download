@@ -1,4 +1,4 @@
-FROM mbradle/docker_wn_user
+FROM webnucleo/wn_user
 
 ARG VAR=data
 
