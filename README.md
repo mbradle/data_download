@@ -4,11 +4,7 @@ This docker image downloads data appropriate for webnucleo projects.  You first 
 
 **docker run hello-world**
 
-Now you can pull the data downloader.  Type:
-
-**docker pull webnucleo/data_download**
-
-Once installed, you can run the image.  First, choose the directory you will download the data to and find its absolute path.   On a linux type system, you can change to an appropriate directory and type
+With docker correctly installed, you can run the image. First, choose the directory you will download the data to and find its absolute path.   On a linux type system, you can change to an appropriate directory and type
 
 **pwd**
 
@@ -16,9 +12,11 @@ For example, I am on my Mac Desktop, so I find the result is */Users/bradleymeye
 
 **docker run -it -v /Users/bradleymeyer/Desktop/data_pub:/data_directory -e VAR=data webnucleo/data_download**
 
+This first pulls and installs the necessary codes.  It then downloads the data.
+
 The downloaded data are in the directory *data_pub*.  The variable *VAR* tells the image which data to download.  Current possible values of *VAR* are *data*, *multi_zone_data*, *neutrino_data*, and *weak_data*.  These are used in Webnucleo codes. For example, I can get the neutrino data by typing (on a single line)
 
-**docker run -it -v /Users/bradleymeyer/Desktop/data_pub:/data_directory -e VAR="neutrino_data" webnucleo/data_download**
+**docker run -it -v /Users/bradleymeyer/Desktop/data_pub:/data_directory -e VAR=neutrino_data webnucleo/data_download**
 
 To clean up all the data, I type
 
